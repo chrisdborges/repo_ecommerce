@@ -14,7 +14,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    html, body{
+    html,
+    body {
       height: 100%;
     }
 
@@ -34,20 +35,42 @@
       padding: 15px;
       margin: auto;
     }
+
+    .button {
+      background-color: #9bca5d;
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 22px;
+      margin: 2px 1px;
+      cursor: pointer;
+      border-radius: 9px;
+    }
   </style>
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <body>
+    <div class="container">
+
+      <img src="img/login.png" width="350" height="150"> <br> <br>
+      <label for="inputEmail"><b>Usuario</b></label><br>
+      <input type="text" placeholder="Email" name="inputEmail" id="inputEmail" required><br>
+
+      <label for="inputPassword"><b>Password</b></label><br>
+      <input type="password" placeholder="Contraseña" name="inputPassword" id="inputPassword" required><br><br>
+
+      <button class="button" id="submitBtn">Login</button><br>
     </div>
-  </div>
+  </body>
+
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>
