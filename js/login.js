@@ -29,17 +29,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
 
         if (camposCompletos) {
-            getJSONData().then(function (resultObj) {
-                if (resultObj.status === "ok") {
-                    usersArray = resultObj.data;
 
-                    if (validateUser(usersArray, inputEmail.value, inputPassword.value)) {
-                        window.location = 'index.html';
-                    } else {
-                        alert("Usuario o contraseña incorrectos!");
-                    }
-                }
-            });
+            window.location = 'index.html';
+
         } else {
             alert("Debes ingresar los datos!");
         }
