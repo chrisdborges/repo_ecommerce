@@ -39,3 +39,18 @@ var getJSONData = function (url) {
       return result;
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  let userLogged = localStorage.getItem('User-Logged');
+  let infoUser = document.getElementById('info-user');
+  let user = document.getElementById('user');
+
+  if (userLogged) {
+    userLogged = JSON.parse(userLogged);
+    user.innerText = user.innerText + 'Usuario: ' + userLogged.email;
+    infoUser.style = 'display: inline-block';
+  }
+
+
+})

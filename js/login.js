@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (camposCompletos) {
 
+            localStorage.setItem('User-Logged', JSON.stringify({ email: inputEmail.value }));
+
             window.location = 'inicio.html';
 
         } else {
