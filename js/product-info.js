@@ -1,5 +1,6 @@
 CommentsArray = [];
 ProductArray = [];
+RelatedProductArray = [];
 const ORDER_DESC_BY_DATE = "Date";
 
 function sortComments(criteria) {
@@ -41,6 +42,7 @@ function showProduct() {
         </a>
     `
     document.getElementById("product-list").innerHTML = htmlContentToAppend;
+    showRelatedProducts()
 }
 
 
@@ -111,6 +113,29 @@ function showCommentBox() {
     `
     document.getElementById("comment-container").style = "display:block";
 }
+function showRelatedProducts() {
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            ProductsArray = resultObj.data;
+            ProductArray.relatedProducts.forEach(function (id) {
+                document.getElementById("related-products").innerHTML += `
+                <a href="product-info.html" class: "d-flex w-100 justify-content-between">
+                    <div class="col-3">
+                        <img src="${ProductsArray[id].imgSrc}"class="img-thumbnail">  
+                        <p class="text-center"
+                    </div>  
+                    <div>
+                    <h4 class="text-center">${ProductsArray[id].name}</h4>
+                        <p class="text-center">${ProductsArray[id].cost}${ProductsArray[id].currency}</p>
+                    </div>
+                </a>
+                `
+            });
+
+        }
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
 

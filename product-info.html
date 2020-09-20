@@ -22,9 +22,17 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div id="info-user" style="display: none;">
-        <a id="user" class="py-2 d-none d-md-inline-block"></a>
+        <div class="dropdown">
+          <button id='user' class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="cart.html">Carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+            <a id='logout' class="dropdown-item">Salir</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -35,6 +43,11 @@
         <h3 class="text-center">Comentarios</h3>
         <div class="col-12" id="comments-container"></div>
         <div class="col-12 mt-4" id="comment-container" style="display:none"></div>
+        <hr>
+        <h3 class="text-center col-12" style="margin-top: 5%;">Productos Relacionados:</h3>
+        <br><br>
+        <div class="d-flex" id="related-products">
+        </div>
       </div>
     </div>
   </div>

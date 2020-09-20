@@ -52,5 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
     infoUser.style = 'display: inline-block';
   }
 
+  document.getElementById('logout').addEventListener("click", function () {
+    localStorage.removeItem('User-Logged');
+    window.location = "index.html";
+  })
+
+
+
 
 })
