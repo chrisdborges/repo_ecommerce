@@ -23,7 +23,7 @@ function showCart() {
         content = `
         <tr class="text-center">
             <td>
-                <img class="img-fluid" style="size:10px;" src="${product.src}" alt="${product.name}">
+                <img class="img-fluid" src="${product.src}" alt="${product.name}">
             </td>
             <td>
                 ${product.name}
@@ -65,7 +65,7 @@ function shipping() {
     let porcen = $("input[name='shipping']:checked").val();
 
     $('#shipping').empty();
-    $('#shipping').append("El costo por el envío será de " + porcen + "% .");
+    $('#shipping').append("El costo de envío será del " + porcen + "%. ");
 
     $('#shippingInfo').empty();
     let shippingInfo = "";
@@ -81,7 +81,7 @@ function shipping() {
 
     }
 
-    $('#shippingInfo').append("El envío demorar entre " + shippingInfo);
+    $('#shippingInfo').append("El pedido llegará entre " + shippingInfo);
 
     let shipping = 0;
     let totalProducts = document.getElementById("totalProducts").innerText;
