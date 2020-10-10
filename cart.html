@@ -4,30 +4,13 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
@@ -54,14 +37,105 @@
       </div>
     </div>
   </nav>
+  </header>
+  <br>
+  <h2 class="text-center">Carrito</h2>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega:
-        25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+    <section>
+
+      <div class="row">
+
+        <div class="col-lg-8 mt-5">
+          <table id="cart-table">
+            <thead>
+              <tr class="text-center">
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody id="cart-table-list">
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+        <div class="mb-3">
+          <div class="pt-4 text-center" id="recibo">
+            <p>Cambia la moneda</p>
+            </p><button id="moneda" class="btn btn-dark fa">
+              Cambiar a UYU <i class="fa fa-dollar-sign"></i></button>
+            <hr>
+
+            <div class="collapse" id="collapseExample">
+              <div class="mt-3">
+
+              </div>
+            </div>
+
+            <h5 class="mb-3 text-center">Boleta:</h5>
+            <ul class="list-group list-group-flush">
+              <h6>Envío:</h6>
+              <li class="list-group-item border-0 px-0">
+                <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+                  <label class="btn btn-secondary btn-shipping active">
+                    <i class="fa fa-truck"></i>
+                    <input type="radio" name="shipping" id="option1" autocomplete="off" value="5" checked> Estándar
+                  </label>
+                  <label class="btn btn-secondary btn-shipping">
+                    <i class="fa fa-shipping-fast"></i>
+                    <input type="radio" name="shipping" id="option2" autocomplete="off" value="7"> Express
+                  </label>
+                  <label class="btn btn-secondary btn-shipping">
+                    <i class="fa fa-fighter-jet"></i>
+                    <input type="radio" name="shipping" id="option3" autocomplete="off" value="15"> Premium
+                  </label>
+                </div>
+              </li>
+              <p id="shipping" class="small muted"></p>
+              <p id="shippingInfo" class="small muted"></p>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Productos:
+                <span><span id="currencyTotalProducts"></span> <span id="totalProducts"></span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+
+                <span><span id="discount"></span><span id="discountPercen"></span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+
+                <span> <span id="currencyDiscountTotalProducts"></span> <span id="discountTotalProducts"></span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Solo envío:
+                <span><span id="currencyShipping"></span> <span id="shippingCost"></span></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                <div>
+                  <span></span><strong>Total:</strong>
+                </div>
+                <span><span id="currencyTotal"></span> <span><strong id="total"></strong></span></span>
+
+              </li>
+            </ul>
+
+            <button type="button" class="btn btn-dark btn-block">Realizar pedido</button>
+
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+  </section>
+
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -76,6 +150,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+
 </body>
 
 </html>
