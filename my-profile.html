@@ -8,9 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -28,6 +30,24 @@
       }
     }
   </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+</head>
+
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
@@ -54,13 +74,52 @@
       </div>
     </div>
   </nav>
+  </header>
+  <br>
+  <h2 class="text-center">Mi Perfil</h2>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="col-lg-6">
+      <form id="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="names">
+            Nombres:</label>
+          <input type="text" class="form-control" id="names" placeholder="Ingrese sus nombres" required
+            pattern="^[a-zA-Z]+" autofocus />
+          <span class="invalid-feedback">Campo inválido.</span>
+        </div>
+        <div class="form-group">
+          <label for="surnames">
+            Apellidos:</label>
+          <input type="text" class="form-control" id="surnames" placeholder="Ingrese sus apellidos" required
+            pattern="^[a-zA-Z]+" autofocus />
+          <span class="invalid-feedback">Campo inválido.</span>
+        </div>
+        <div class="form-group">
+          <label for="date">
+            Fecha de nacimiento:</label>
+          <input type="text" class="form-control date" id="date" placeholder="Inserte su fecha de nacimiento"
+            pattern="^(19[0-9][0-9]|20[0-4][0-9]|2050)[-/](0?[1-9]|1[0-2])[-/](0?[1-9]|[12][0-9]|3[01])$" autofocus
+            required />
+          <span class="invalid-feedback">Campo inválido. AAAA/MM/DD</span>
+        </div>
+        <div class="form-group">
+          <label for="email">
+            Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus />
+          <span class="invalid-feedback">Campo inválido.</span>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">
+            Número de teléfono:</label>
+          <input type="text" class="form-control" id="phoneNumber" placeholder="Ingrese su número de teléfono"
+            pattern="^[0-9]+" autofocus required />
+          <span class="invalid-feedback">Campo inválido.</span>
+        </div>
+        <button type="submit" id="saveChanges" class="btn btn-dark col-12"> Guardar cambios </button>
+      </form>
     </div>
+  </div>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
@@ -70,7 +129,7 @@
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" id="alertDismiss" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -87,6 +146,8 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script src="js/navbar.js"></script>
+  <a id="top"></a>
 </body>
 
 </html>
